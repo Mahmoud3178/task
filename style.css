@@ -22,7 +22,7 @@ button {
 }
 
 .main {
-    background-image: url("images/main_image.jpg");
+    background-image: url("main_image.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     height: 700px;
