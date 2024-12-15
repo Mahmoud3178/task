@@ -6,6 +6,7 @@
 
 body {
     height: 100vh;
+    overflow-x: hidden;
 }
 
 a, ul {
@@ -22,7 +23,7 @@ button {
 }
 
 .main {
-    background-image: url("main_image.jpg");
+    background-image: url("images/main_image.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     height: 700px;
@@ -35,15 +36,11 @@ button {
     justify-content: space-between;
     background-color: rgba(70, 67, 67, 0.5);
     padding: 10px;
-
-    /* خصائص تجعل الخلفية تغطي الصفحة */
-    width: 100%; /* عرض كامل */
-    position: absolute; /* تثبيت الـ navbar */
-    top: 0; /* تثبيت عند أعلى الصفحة */
-    left: 0; /* تثبيت عند بداية الصفحة */
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
-
-
 
 .navbar ul {
     display: flex;
@@ -53,9 +50,9 @@ button {
     margin-left: 10px;
 }
 
-.navbar .fa-bars{
+.navbar .fa-bars {
     margin-left: 400px;
-    font-size:30px;
+    font-size: 30px;
     color: aliceblue;
     display: none;
 }
@@ -95,26 +92,19 @@ h1 {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    /* min-height: 100px; */
-
 }
+
 .content .alpha {
     padding: 25px 0px;
     background-color: rgba(255, 255, 255, 0.5);
-    background-size: cover;
-    .center h1,.right h1{
-        color: black;
-    }
 }
 
-
-
-.content .rows .left img {
-width: 80%;  
-  height: 330px;
-    margin-left: 20px;
-    padding-inline: 150px;
-    padding-top: 10px;
+.content .rows .left img,
+.content .rows .center img {
+    display: block;
+    margin:  auto;
+    width: 80%;  /* يمكن تعديل العرض حسب الحاجة */
+    height: auto; /* الحفاظ على النسب الأصلية للصورة */
 }
 
 .content .rows {
@@ -124,17 +114,15 @@ width: 80%;
     padding-inline: 20px;
     font-size: 15px;
     padding-top: 50px;
-
 }
 
-.content .rows .left{
+.content .rows .left {
     width: 50%;
 }
-.content .rows .center, .content .rows .right{
+
+.content .rows .center, .content .rows .right {
     width: 25%;
 }
-
-
 
 .content #content-main {
     text-align: center;
@@ -148,46 +136,123 @@ width: 80%;
     padding-top: 20px;
     color: black;
     margin: auto;
-
 }
 
+/* الاستعلامات الخاصة بالوسائط */
 
-/* @media(max-width:1245px){
+@media (max-width: 1245px) {
     .content .rows .left img {
-width: 600px;   
- }      
- .content .rows .center, .content .rows .right{
-    width: 100%;
+        width: 60%;   
+    }      
+    .content .rows .center, .content .rows .right {
+        width: 100%;
+    }
 }
-} */
 
-@media(max-width:992px){
+@media (max-width: 992px) {
     .content .rows .left img {
-width: 600px;   
- }      
-
+        width: 70%;
+    }  
 }
-/* media */
-@media(max-width:768px){
+
+@media (max-width: 768px) {
     .navbar ul {
         display: none;
     }
-    .navbar .fa-bars{
+
+    .navbar .fa-bars {
         display: block;
     }
 
-    .content .rows .left{
+    .content .rows .left {
         width: 100%;
         margin-bottom: 20px;
     }
-    .content .rows .center, .content .rows .right{
+
+    .content .rows .center, .content .rows .right {
         width: 50%;
     }
 
- 
-
-    .main .contentt{
+    .main .contentt {
         width: 100%;
         margin-top: 100px;
     }
 }
+
+/* للمقاسات الصغيرة مثل 390px */
+@media (max-width: 390px) {
+
+    .main .contentt img {
+        width: 20%;  
+        margin-right: 90px;
+        /* تحدد عرض الصورة في الشاشات الصغيرة */
+    }
+    .content .rows .left img {
+        width: 90%;
+    }
+
+    .content .rows .center img {
+        width: 90%;
+    }
+
+    .content #content-main {
+        width: 100%;
+    }
+    .navbar .fa-bars {
+
+        display: block;
+    }
+}
+@media (max-width: 768px) {
+    .navbar ul {
+        display: none;
+    }
+
+    .navbar .fa-bars {
+        display: block;
+        font-size: 30px; /* تأكد من الحجم المناسب */
+        color: white; /* التأكد من اللون */
+        margin-left: 20px; /* يمكنك تعديل المسافة حسب الحاجة */
+    }
+
+    .content .rows .left {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .content .rows .center, .content .rows .right {
+        width: 50%;
+    }
+
+    .main .contentt {
+        width: 100%;
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 390px) {
+    .main .contentt img {
+        width: 20%;  
+        margin-right: 90px;
+    }
+
+    .content .rows .left img {
+        width: 90%;
+    }
+
+    .content .rows .center img {
+        width: 90%;
+    }
+
+    .content #content-main {
+        width: 100%;
+    }
+
+    .navbar .fa-bars {
+        display: block;
+        font-size: 30px; /* تأكد من أن الأيقونة بحجم مناسب */
+        color: white; /* تحديد اللون بشكل مناسب */
+        margin-left: 15px; /* لتحديد المسافة من اليسار */
+    }
+}
+
